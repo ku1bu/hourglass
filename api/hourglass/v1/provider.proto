@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+import "google/api/annotations.proto";
+
+option go_package = "hourglass/api/hourglass/v1;v1";
+
+service Provider {
+    rpc Register (ProviderRegisterRequest) returns (ProviderInfo) {
+        option (google.api.http) = {
+            post: "/hourglass/provider/v1/register",
+            body: "*"
+        };
+    }
+
+    rpc Disregister (ProviderDisregisterRequest) returns (ProviderInfo) {
+        option (google.api.http) = {
+            delete: "/hourglass/provider/v1/register/{id}",
+        };
+    }
+}
+
+message ProviderRegisterRequest {
+    int32 capacity = 2;
+    string name = 3;
+    int32 minClients = 4;
+}
+
+message ProviderInfo {
+    string id = 1;
+    int32 capacity = 2;
+    string name = 3;
+    int32 minClients = 4;
+}
+
+message ProviderDisregisterRequest {
+    string id = 1;
+    string name = 2;
+}

@@ -1,0 +1,163 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "api/hourglass/v1/customer.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Customer"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/hourglass/customer/v1/register": {
+      "post": {
+        "operationId": "Customer_Register",
+        "responses": {
+          "200": {
+            "description": "A successful response.(streaming responses)",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "result": {
+                  "$ref": "#/definitions/CustomerInfo"
+                },
+                "error": {
+                  "$ref": "#/definitions/rpcStatus"
+                }
+              },
+              "title": "Stream result of CustomerInfo"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CustomerRegisterRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Customer"
+        ]
+      },
+      "patch": {
+        "operationId": "Customer_Feedback",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/CustomerInfo"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/FeedbackRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Customer"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "CustomerInfo": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "Quota": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "weights": {
+          "type": "number",
+          "format": "float"
+        }
+      }
+    },
+    "CustomerRegisterRequest": {
+      "type": "object",
+      "properties": {
+        "providerName": {
+          "type": "string"
+        }
+      },
+      "title": "Id       string\nQuota    int32\nWatcBack WatcBack\nWeights  float32\nHunger   bool"
+    },
+    "FeedbackRequest": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "consume": {
+          "type": "number",
+          "format": "float"
+        },
+        "serviceName": {
+          "type": "string"
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "typeUrl": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string",
+          "format": "byte"
+        }
+      }
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    }
+  }
+}

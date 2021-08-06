@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+import "google/api/annotations.proto";
+
+option go_package = "hourglass/api/hourglass/v1;v1";
+
+service Customer {
+    rpc Register (CustomerRegisterRequest) returns (stream CustomerInfo) {
+        option (google.api.http) = {
+            post: "/hourglass/customer/v1/register",
+            body: "*"
+        };
+    }
+
+    rpc Feedback (FeedbackRequest) returns (CustomerInfo) {
+        option (google.api.http) = {
+            patch: "/hourglass/customer/v1/register",
+            body: "*"
+        };
+    }
+}
+
+/*
+	Id       string
+	Quota    int32
+	WatcBack WatcBack
+	Weights  float32
+	Hunger   bool
+*/
+message CustomerRegisterRequest {
+    string providerName = 3;
+}
+
+message CustomerInfo {
+    string id = 1;
+    int32 Quota = 2;
+    float weights = 3;
+}
+
+message FeedbackRequest {
+    string id = 1;
+    float consume = 2;
+    string serviceName = 3;
+}
