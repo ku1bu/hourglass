@@ -3,9 +3,10 @@ package service
 import (
 	"context"
 	"fmt"
-	"hourglass/internal/model"
 	"testing"
 	"time"
+
+	"github.com/ku1bu/hourglass/internal/model"
 )
 
 type testCoordinator struct {

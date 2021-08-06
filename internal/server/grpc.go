@@ -1,9 +1,9 @@
 package server
 
 import (
-	"hourglass/internal/conf"
+	"github.com/ku1bu/hourglass/internal/conf"
 
-	v1 "hourglass/api/hourglass/v1"
+	v1 "github.com/ku1bu/hourglass/api/hourglass/v1"
 
 	"github.com/go-kratos/kratos/v2/log"
 	"github.com/go-kratos/kratos/v2/middleware/logging"

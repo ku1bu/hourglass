@@ -2,10 +2,11 @@ package store
 
 import (
 	"fmt"
-	"hourglass/internal/model"
 	"reflect"
 	"sync"
 	"testing"
+
+	"github.com/ku1bu/hourglass/internal/model"
 )
 
 func Test_memoryStore_GetGroup(t *testing.T) {

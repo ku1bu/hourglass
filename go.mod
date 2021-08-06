@@ -1,4 +1,4 @@
-module hourglass
+module github.com/ku1bu/hourglass
 
 go 1.16
 

@@ -2,7 +2,7 @@ package grpcv1
 
 import (
 	"context"
-	v1 "hourglass/api/hourglass/v1"
+	v1 "github.com/ku1bu/hourglass/api/hourglass/v1"
 	"testing"
 
 	"github.com/go-kratos/kratos/v2/transport/grpc"

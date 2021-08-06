@@ -1,7 +1,7 @@
 package store
 
 import (
-	"hourglass/internal/model"
+	"github.com/ku1bu/hourglass/internal/model"
 )
 
 type Store interface {

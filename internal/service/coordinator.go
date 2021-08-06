@@ -2,8 +2,9 @@ package service
 
 import (
 	"context"
-	"hourglass/internal/model"
-	"hourglass/internal/store"
+
+	"github.com/ku1bu/hourglass/internal/model"
+	"github.com/ku1bu/hourglass/internal/store"
 
 	"github.com/google/uuid"
 )

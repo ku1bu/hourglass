@@ -4,7 +4,7 @@ import (
 	"flag"
 	"os"
 
-	"hourglass/internal/conf"
+	"github.com/ku1bu/hourglass/internal/conf"
 
 	"github.com/go-kratos/kratos/v2"
 	"github.com/go-kratos/kratos/v2/config"

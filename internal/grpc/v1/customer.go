@@ -2,9 +2,10 @@ package grpcv1
 
 import (
 	"context"
-	v1 "hourglass/api/hourglass/v1"
-	"hourglass/internal/model"
-	"hourglass/internal/service"
+
+	v1 "github.com/ku1bu/hourglass/api/hourglass/v1"
+	"github.com/ku1bu/hourglass/internal/model"
+	"github.com/ku1bu/hourglass/internal/service"
 
 	"github.com/go-kratos/kratos/v2/log"
 )

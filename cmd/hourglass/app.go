@@ -1,10 +1,10 @@
 package main
 
 import (
-	"hourglass/internal/conf"
-	grpcv1 "hourglass/internal/grpc/v1"
-	"hourglass/internal/server"
-	"hourglass/internal/service"
+	"github.com/ku1bu/hourglass/internal/conf"
+	grpcv1 "github.com/ku1bu/hourglass/internal/grpc/v1"
+	"github.com/ku1bu/hourglass/internal/server"
+	"github.com/ku1bu/hourglass/internal/service"
 
 	"github.com/go-kratos/kratos/v2"
 	"github.com/go-kratos/kratos/v2/log"

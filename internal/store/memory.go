@@ -1,8 +1,8 @@
 package store
 
 import (
-	"hourglass/internal/model"
-	"hourglass/internal/pkg/errorx"
+	"github.com/ku1bu/hourglass/internal/model"
+	"github.com/ku1bu/hourglass/internal/pkg/errorx"
 	"sync"
 )
 
