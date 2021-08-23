@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option go_package = "hourglass/api/hourglass/v1;v1";
+
+message Errorgg {
+    string code = 1;
+    string message = 2;
+    string myCode = 3;
+}

@@ -2,8 +2,8 @@ package grpcv1
 
 import (
 	"context"
+
 	v1 "github.com/ku1bu/hourglass/api/hourglass/v1"
-	"github.com/ku1bu/hourglass/internal/model"
 	"github.com/ku1bu/hourglass/internal/service"
 
 	"github.com/go-kratos/kratos/v2/log"
@@ -20,23 +20,29 @@ func NewProvider(coordinator *service.Coordinator, logger log.Logger) v1.Provide
 }
 
 func (p *provider) Register(ctx context.Context, in *v1.ProviderRegisterRequest) (*v1.ProviderInfo, error) {
-	svc := &model.Service{
-		Capacity:   in.Capacity,
-		Name:       in.Name,
-		MinClients: in.MinClients,
-	}
+	// svc := &model.Service{
+	// 	Capacity:   in.Capacity,
+	// 	Name:       in.Name,
+	// 	MinClients: in.MinClients,
+	// }
 
-	err := p.coordinator.RegisterService(ctx, svc)
-	if err != nil {
-		return nil, err
-	}
+	// err := p.coordinator.RegisterService(ctx, svc)
+	// if err != nil {
+	// 	return nil, err
+	// }
 
-	return &v1.ProviderInfo{
-		Id:         svc.Id,
-		Capacity:   svc.Capacity,
-		Name:       svc.Name,
-		MinClients: svc.MinClients,
-	}, nil
+	// return &v1.ProviderInfo{
+	// 	Id:         svc.Id,
+	// 	Capacity:   svc.Capacity,
+	// 	Name:       svc.Name,
+	// 	MinClients: svc.MinClients,
+	// }, nil
+
+	return nil, &v1.Errorgg{
+		Code:    "GGGGGG",
+		Message: "MMMMMMM",
+		MyCode:  "MYCODE1111",
+	}
 }
 
 func (p *provider) Disregister(ctx context.Context, in *v1.ProviderDisregisterRequest) (*v1.ProviderInfo, error) {
